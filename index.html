@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>شهر رنگارنگ اعشار</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+:root{
+ --purple:#55c9c0;--pink:#ff8199;--yellow:#ffca59;--mint:#56cbb0;
+ --blue:#65b9ed;--ink:#edf3ff;--bg:#172238;--white:#263650;
+}
+*{box-sizing:border-box}
+body{
+ margin:0;font-family:Vazirmatn,Tahoma,sans-serif;color:var(--ink);
+ background:
+ radial-gradient(circle at 10% 15%,#49304f 0,transparent 25%),
+ radial-gradient(circle at 90% 35%,#174b50 0,transparent 28%),
+ linear-gradient(135deg,#172238,#202d46 55%,#172b3b);
+ min-height:100vh;
+}
+button{font:inherit;cursor:pointer;border:0}
+header{
+ background:linear-gradient(120deg,#245c70,#287f83);
+ color:white;text-align:center;padding:22px 12px 48px;
+ border-radius:0 0 35px 35px;position:relative;overflow:hidden;
+}
+header h1{font-size:27px;margin:4px}
+header p{font-size:14px;margin:5px}
+.container{max-width:960px;margin:20px auto;padding:12px}
+.card{
+ background:#263650;border-radius:25px;padding:23px;margin-bottom:18px;
+ box-shadow:0 7px 25px #07111f55;border:1px solid #40516c;
+}
+.hero{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
+.robot{width:185px;flex-shrink:0}
+.robot svg{width:100%;height:auto;overflow:visible}
+.speech{
+ flex:1;min-width:190px;background:#34445f;border:2px solid #52647e;
+ border-radius:22px;padding:17px;line-height:2.1;color:#f2f5ff;
+}
+.speech strong{color:#75e0d4;font-size:18px}
+.robot-wrap{animation:bob 3s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.spark{animation:twinkle 2s infinite alternate}
+@keyframes twinkle{to{opacity:.3;transform:scale(.8)}}
+h2{color:#78ddd2;margin-top:0;font-size:22px}
+h3{color:#a9c9f4}
+p{line-height:2}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}
+.stat{border-radius:17px;padding:13px 5px;text-align:center;font-size:13px;font-weight:700}
+.stat:nth-child(1){background:#594a35;color:#ffe09a}
+.stat:nth-child(2){background:#245548;color:#9cf0c5}
+.stat:nth-child(3){background:#41406b;color:#d2c5ff}
+.stat span{display:block;font-size:26px}
+.stat b{font-size:18px}
+.progress{height:12px;background:#43516a;border-radius:20px;overflow:hidden;margin:14px 0 22px}
+.progress div{height:100%;width:0;background:linear-gradient(90deg,#56cbb0,#65b9ed);border-radius:20px;transition:.4s}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{
+ background:#30415c;border:2px solid #465b78;border-radius:19px;padding:17px;
+ text-align:right;transition:.2s;position:relative;overflow:hidden;color:var(--ink);
+}
+.lesson:hover{transform:translateY(-3px);border-color:#75d9d0}
+.lesson .emoji{font-size:32px;display:block}
+.lesson strong{display:block;margin:9px 0;color:#8ce4dc}
+.lesson small{color:#c0cce0;line-height:2}
+.lesson.done{background:#245044;border-color:#56c99b}
+.done-tag{color:#9af0c0;font-size:12px}
+button.primary{background:linear-gradient(120deg,#238d91,#3bb6a9);color:white;box-shadow:0 5px 12px #07111f55}
+button.secondary{background:#3b4c69;color:#bceee9}
+button.soft{background:#594a35;color:#ffe09a}
+button{padding:13px 18px;border-radius:14px;transition:.2s}
+button:hover:not(:disabled){filter:brightness(1.08);transform:translateY(-2px)}
+button:disabled{opacity:.65;cursor:default}
+.example{background:#33415e;border:1px solid #4b5b7a;border-radius:17px;padding:16px;margin:15px 0;line-height:2.1}
+.tip{background:#244d4b;border-right:5px solid #56cbb0;padding:14px;border-radius:13px;margin:15px 0;line-height:2;color:#d7fff2}
+.number{direction:ltr;text-align:center;font-size:30px;font-weight:900;color:#85ddd6;margin:17px 0}
+.math{direction:ltr;unicode-bidi:isolate;display:inline-block;font-size:23px;font-weight:bold}
+table{width:100%;border-collapse:collapse;text-align:center}
+td,th{border:1px solid #52617b;padding:11px}
+th{background:#3b4b6c;color:#c4d5ff}
+.lesson-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.pill{background:#594a35;color:#ffe09a;border-radius:30px;padding:8px 13px;font-size:13px}
+.mascot-message{display:flex;align-items:center;gap:12px;padding:12px;background:#34445f;border-radius:16px;line-height:2;margin:16px 0}
+.mascot-message span:first-child{font-size:35px}
+.question{background:#34415f;border:2px solid #526284;border-radius:20px;text-align:center;padding:22px;margin:17px 0;font-size:19px;font-weight:700;line-height:2}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.option{background:#35445e;border:2px solid #53627a;width:100%;padding:16px 8px;font-size:17px;color:#f0f4ff}
+.option:hover:not(:disabled){border-color:#78dcd3;background:#405875}
+.option.correct{background:#245b4b;border-color:#52c78a;color:#b5ffda}
+.option.wrong{background:#633d4b;border-color:#ff8999;color:#ffd1d8}
+.feedback{display:none;padding:16px;border-radius:16px;margin-top:15px;line-height:2;color:#172238}
+.timer-track{background:#43516a;height:7px;border-radius:10px;overflow:hidden;margin-top:12px}
+.timer-fill{background:#f5b94e;height:100%;width:100%;transition:width .1s linear}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.actions button{flex:1}
+.hidden{display:none!important}
+.footer{background:#111b2d;color:white;text-align:center;padding:24px;border-radius:24px;line-height:2.2;margin-top:22px;border:1px solid #34435b}
+.footer strong{color:#ffdb85}
+.stars{font-size:30px;color:#f4b83f;letter-spacing:5px}
+.countdown{color:#8ce4dc;font-size:13px;margin-top:8px}
+.reset{font-size:12px;color:#aab7ce;background:transparent;padding:8px}
+.score-line{display:flex;align-items:center;justify-content:center;gap:9px;direction:rtl;white-space:nowrap}
+.score-line span{display:inline-block}
+@media(max-width:550px){
+ .grid{grid-template-columns:1fr}.options{grid-template-columns:1fr}
+ .card{padding:17px}.robot{width:140px}header h1{font-size:23px}
+ .stats{gap:6px}.stat{font-size:11px}
+}
+</style>
+</head>
+<body>
+<header>
+ <div style="font-size:30px">🌈 ✨ 🌈</div>
+ <h1>شهر رنگارنگ اعشار</h1>
+ <p>با اعشارک یاد بگیر و قهرمان ریاضی شو!</p>
+</header>
+
+<div class="container">
+<section class="card" id="home">
+ <div class="hero">
+  <div class="robot robot-wrap">
+   <svg viewBox="0 0 220 245" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+     <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9b88f5"/><stop offset="1" stop-color="#6656c8"/></linearGradient>
+     <linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#dff6ff"/></linearGradient>
+     <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffbb75"/><stop offset="1" stop-color="#ff829a"/></linearGradient>
+    </defs>
+    <ellipse cx="110" cy="231" rx="72" ry="10" fill="#9e91c733"/>
+    <path d="M110 33V17" stroke="#7764d9" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="110" cy="12" r="10" fill="#ffd15c"/><circle cx="106" cy="9" r="3" fill="white"/>
+    <rect x="26" y="88" width="27" height="53" rx="13" fill="#7563d8"/>
+    <rect x="167" y="88" width="27" height="53" rx="13" fill="#7563d8"/>
+    <circle cx="39" cy="115" r="6" fill="#ffe28b"/><circle cx="181" cy="115" r="6" fill="#ffe28b"/>
+    <rect x="48" y="47" width="124" height="145" rx="43" fill="url(#body)"/>
+    <rect x="57" y="57" width="106" height="119" rx="36" fill="url(#face)"/>
+    <ellipse cx="86" cy="107" rx="15" ry="19" fill="#37456e"/><ellipse cx="134" cy="107" rx="15" ry="19" fill="#37456e"/>
+    <circle cx="91" cy="100" r="6" fill="white"/><circle cx="139" cy="100" r="6" fill="white"/>
+    <circle cx="82" cy="114" r="3" fill="#a9c7ff"/><circle cx="130" cy="114" r="3" fill="#a9c7ff"/>
+    <ellipse cx="67" cy="130" rx="11" ry="6" fill="#ffabb8" opacity=".7"/><ellipse cx="153" cy="130" rx="11" ry="6" fill="#ffabb8" opacity=".7"/>
+    <path d="M88 137 Q110 158 132 137" fill="none" stroke="#f07c9b" stroke-width="5" stroke-linecap="round"/>
+    <path d="M60 162 Q110 144 160 162 L168 193 Q110 215 52 193Z" fill="url(#shirt)"/>
+    <text x="110" y="186" text-anchor="middle" font-size="18" font-weight="bold" fill="white">۰٫۵</text>
+    <path d="M53 165 Q24 155 21 183" fill="none" stroke="#7966dc" stroke-width="14" stroke-linecap="round"/>
+    <path d="M167 165 Q196 155 199 183" fill="none" stroke="#7966dc" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="21" cy="186" r="11" fill="#ffd16a"/><circle cx="199" cy="186" r="11" fill="#ffd16a"/>
+    <rect x="73" y="193" width="24" height="31" rx="10" fill="#6655c8"/><rect x="123" y="193" width="24" height="31" rx="10" fill="#6655c8"/>
+    <ellipse cx="83" cy="223" rx="20" ry="9" fill="#ff9b89"/><ellipse cx="137" cy="223" rx="20" ry="9" fill="#ff9b89"/>
+    <path class="spark" d="M24 40L29 52L42 57L29 62L24 75L19 62L6 57L19 52Z" fill="#ffc956"/>
+    <path class="spark" d="M191 35L195 44L205 48L195 52L191 62L187 52L177 48L187 44Z" fill="#55d1b0"/>
+   </svg>
+  </div>
+  <div class="speech">
+   <strong>سلام قهرمان کوچولو! 👋</strong><br>
+   من اعشارک هستم! 🤖<br>
+   بیا با هم درس بخونیم، بازی کنیم و کلی ستاره جمع کنیم!<br>
+   <span style="color:#8bdbd4">من همیشه پیشرفتت رو به خاطر می‌سپارم! 💜</span>
+  </div>
+ </div>
+
+ <div class="stats">
+  <div class="stat"><span>⭐</span>امتیاز<br><b id="score">۰</b></div>
+  <div class="stat"><span>🏆</span>درس‌ها<br><b id="completed">۰</b></div>
+  <div class="stat"><span>🎖️</span>نشان‌ها<br><b id="medals">۰</b></div>
+ </div>
+ <h2>🗺️ مسیر ماجراجویی</h2>
+ <p>یک درس انتخاب کن و وارد دنیای اعشار شو!</p>
+ <div class="progress"><div id="bar"></div></div>
+ <div class="grid" id="lessonList"></div>
+ <div class="tip">💡 اعشارک می‌گوید: هر درس را با دقت یاد بگیر و بعد تمرین‌هایش را حل کن!</div>
+ <button class="reset" onclick="resetGame()">پاک کردن همه پیشرفت‌ها</button>
+</section>
+
+<section class="card hidden" id="lessonPage">
+ <div class="lesson-head"><span class="pill" id="lessonNumber"></span><button class="secondary" onclick="goHome()">🏠 خانه</button></div>
+ <h2 id="lessonTitle"></h2>
+ <div class="mascot-message"><span>🤖</span><span id="mascotMessage"></span></div>
+ <div id="lessonContent"></div>
+ <div class="actions"><button class="primary" onclick="startQuiz()">شروع تمرین 🎯</button></div>
+</section>
+
+<section class="card hidden" id="quizPage">
+ <div class="lesson-head">
+  <span class="pill" id="quizNumber"></span>
+  <span class="pill">⭐ امتیاز: <span id="quizScore">۰</span></span>
+ </div>
+ <div class="mascot-message"><span>🤖</span><span>تو می‌تونی! با دقت به سؤال جواب بده.</span></div>
+ <div class="progress"><div id="quizProgress"></div></div>
+ <div class="question" id="question"></div>
+ <div class="options" id="options"></div>
+ <div class="feedback" id="feedback"></div>
+ <div class="countdown hidden" id="countdown"></div>
+ <div class="timer-track hidden" id="timerTrack"><div class="timer-fill" id="timerFill"></div></div>
+</section>
+
+<section class="card hidden" id="resultPage">
+ <div style="text-align:center">
+  <div style="font-size:75px">🏆</div>
+  <h2>تو فوق‌العاده‌ای!</h2>
+  <div class="stars" id="stars"></div>
+  <h3 id="resultTitle"></h3>
+  <p id="resultText"></p>
+  <div class="example">
+   امتیاز این درس:
+   <div class="number score-line" id="lessonPoints"></div>
+  </div>
+  <div class="actions">
+   <button class="secondary" onclick="goHome()">خانه 🏠</button>
+   <button class="primary" onclick="openLesson(current)">مرور درس 📚</button>
+  </div>
+ </div>
+</section>
+
+<footer class="footer">
+ 🌈 شهر رنگارنگ اعشار<br>
+ <strong>طراحان:</strong> نیما رهبری و حیدر رسولی<br>
+ <strong>استاد:</strong> سمیه نعمتی<br>
+ <small>یادگیری با شادی، تمرین با انگیزه ❤️</small>
+</footer>
+</div>
+
+<script>
+const STORAGE_KEY="decimal_city_save_v2";
+let score=0,current=0,qIndex=0,lessonScore=0;
+let completed=[],medals=[],activePage="home",locked=false;
+let autoTimer=null,timerInterval=null;
+
+function saveGame(){
+ const data={score,current,qIndex,lessonScore,completed,medals,activePage};
+ try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data));}
+ catch(e){console.log("ذخیره‌سازی در این مرورگر ممکن نیست.");}
+}
+function loadGame(){
+ try{
+  const data=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");
+  if(!data)return;
+  score=data.score||0;
+  current=Number.isInteger(data.current)?data.current:0;
+  qIndex=Number.isInteger(data.qIndex)?data.qIndex:0;
+  lessonScore=data.lessonScore||0;
+  completed=Array.isArray(data.completed)?data.completed:[];
+  medals=Array.isArray(data.medals)?data.medals:[];
+  activePage=data.activePage||"home";
+  current=Math.max(0,Math.min(current,lessons.length-1));
+  qIndex=Math.max(0,Math.min(qIndex,5));
+ }catch(e){console.log("اطلاعات ذخیره‌شده قابل خواندن نیست.");}
+}
+
+const lessons=[
+{title:"آشنایی با اعداد اعشاری",icon:"🔢",desc:"اعشار چیست و ممیز کجاست؟",message:"اول باید بفهمیم اعشار یعنی چه!",content:`
+<h3>عدد اعشاری چیست؟</h3>
+<p>گاهی برای نشان دادن یک مقدار، عدد صحیح کافی نیست. مثلاً یک کیک را به ۱۰ قسمت مساوی تقسیم می‌کنیم.</p>
+<div class="example"><div class="number">۰٫۳</div>اگر ۳ قسمت از ۱۰ قسمت را برداریم، سه دهم داریم.</div>
+<h3>با تصویر یاد بگیریم 👀</h3><p>سه قسمت از ده قسمت رنگی شده است.</p>
+<div id="tenths" style="display:flex;justify-content:center;gap:5px;flex-wrap:wrap"></div>
+<div class="tip">۳ قسمت از ۱۰ قسمت یعنی ۰٫۳</div>
+<h3>ممیز چیست؟</h3><p>علامت «٫» قسمت صحیح را از قسمت اعشاری جدا می‌کند.</p>
+<div class="number">۲٫۵</div>۲ واحد کامل و ۵ دهم.`},
+{title:"دهم و صدم",icon:"🧩",desc:"شناخت ارزش مکانی رقم‌ها",message:"حالا جایگاه رقم‌ها را کشف کنیم!",content:`
+<h3>اولین رقم بعد از ممیز</h3><p>اولین رقم بعد از ممیز، دهم نام دارد.</p><div class="number">۰٫۴</div>چهار دهم.
+<h3>دومین رقم بعد از ممیز</h3><p>دومین رقم بعد از ممیز، صدم نام دارد.</p><div class="number">۰٫۴۵</div>چهل و پنج صدم.
+<table><tr><th>عدد</th><th>خواندن</th></tr><tr><td>۰٫۱</td><td>یک دهم</td></tr><tr><td>۰٫۳</td><td>سه دهم</td></tr><tr><td>۰٫۲۵</td><td>بیست و پنج صدم</td></tr><tr><td>۰٫۷۸</td><td>هفتاد و هشت صدم</td></tr></table>
+<h3>ارزش مکانی</h3><div class="example"><div class="number">۳۲٫۴۵</div><table><tr><th>دهگان</th><th>یکان</th><th>دهم</th><th>صدم</th></tr><tr><td>۳</td><td>۲</td><td>۴</td><td>۵</td></tr></table></div>
+<div class="tip">اولین رقم بعد از ممیز دهم و دومین رقم صدم است.</div>`},
+{title:"مقایسه اعداد اعشاری",icon:"⚖️",desc:"بزرگ‌تر، کوچک‌تر یا مساوی",message:"بیا ببینیم کدام عدد بزرگ‌تر است!",content:`
+<h3>چطور دو عدد اعشاری را مقایسه کنیم؟</h3><p>ابتدا قسمت صحیح را مقایسه می‌کنیم. اگر برابر بود، به سراغ دهم و سپس صدم می‌رویم.</p>
+<div class="example"><div class="number">۰٫۸ > ۰٫۳</div>هشت دهم از سه دهم بزرگ‌تر است.</div>
+<div class="example"><div class="number">۰٫۴۵ > ۰٫۳۹</div>چون ۴ دهم از ۳ دهم بزرگ‌تر است.</div>
+<table><tr><th>علامت</th><th>معنی</th></tr><tr><td>></td><td>بزرگ‌تر</td></tr><tr><td><</td><td>کوچک‌تر</td></tr><tr><td>=</td><td>مساوی</td></tr></table>
+<div class="tip">۰٫۵ = ۰٫۵۰؛ صفر انتهایی مقدار عدد را تغییر نمی‌دهد.</div>`},
+{title:"جمع اعداد اعشاری",icon:"➕",desc:"جمع کردن با ممیز",message:"حالا جمع کردن را یاد می‌گیریم!",content:`
+<h3>قانون مهم جمع اعشاری</h3><p>ممیزها باید دقیقاً زیر یکدیگر قرار بگیرند.</p>
+<div class="example"><div class="number">۰٫۲ + ۰٫۳ = ۰٫۵</div>دو دهم به علاوه سه دهم می‌شود پنج دهم.</div>
+<h3>جمع ستونی</h3><div class="example" style="text-align:center"><div class="math">۰٫۲۵</div><br><div class="math">+ ۰٫۳۲</div><hr><div class="math">۰٫۵۷</div></div>
+<p>از راست به چپ جمع می‌کنیم و ممیز را در جای خود قرار می‌دهیم.</p>
+<div class="example"><div class="number">۰٫۷ + ۰٫۶ = ۱٫۳</div>هفت دهم به علاوه شش دهم برابر سیزده دهم است.</div>
+<div class="tip">رقم‌های هم‌ارزش را زیر یکدیگر بنویس.</div>`},
+{title:"تفریق اعداد اعشاری",icon:"➖",desc:"کم کردن با ممیز",message:"تفریق هم خیلی راحت است!",content:`
+<h3>قانون مهم تفریق</h3><p>در تفریق هم باید ممیزها دقیقاً زیر یکدیگر باشند.</p>
+<div class="example"><div class="number">۰٫۸ − ۰٫۳ = ۰٫۵</div>هشت دهم منهای سه دهم برابر پنج دهم است.</div>
+<h3>تفریق ستونی</h3><div class="example" style="text-align:center"><div class="math">۰٫۷۵</div><br><div class="math">− ۰٫۲۳</div><hr><div class="math">۰٫۵۲</div></div>
+<h3>وقتی تعداد رقم‌ها برابر نیست</h3><p>می‌توانیم به انتهای قسمت اعشاری صفر اضافه کنیم.</p>
+<div class="number">۰٫۷۰ − ۰٫۲۵ = ۰٫۴۵</div><div class="tip">۰٫۷ و ۰٫۷۰ با هم برابر هستند.</div>`},
+{title:"آزمون بزرگ اعشار",icon:"🏆",desc:"آزمون نهایی تمام آموخته‌ها",message:"وقت قهرمانی رسیده! آماده‌ای؟",content:`
+<h3>تبریک! 🎉</h3><p>تو درس‌های اصلی اعشار را یاد گرفتی.</p>
+<div class="example"><p>🔹 شناخت عدد اعشاری</p><p>🔹 دهم و صدم</p><p>🔹 مقایسه اعداد</p><p>🔹 جمع اعداد اعشاری</p><p>🔹 تفریق اعداد اعشاری</p></div>
+<p>حالا در آزمون نهایی شرکت کن و مهارت خودت را نشان بده!</p>`}
+];
+
+// ۳۶ سؤال مستقل؛ هیچ متن سؤالی تکرار نشده است.
+const quizzes=[
+[
+{q:"عدد ۰٫۶ چگونه خوانده می‌شود؟",a:["شش دهم","شش صدم","شش یکان","شش دهگان"],c:0,e:"اولین رقم بعد از ممیز دهم است؛ پس ۰٫۶ یعنی شش دهم."},
+{q:"در عدد ۲٫۴، رقم ۴ چه ارزشی دارد؟",a:["یکان","دهم","صدم","دهگان"],c:1,e:"رقم ۴ اولین رقم بعد از ممیز است."},
+{q:"عدد سه دهم کدام است؟",a:["۰٫۰۳","۰٫۳","۳٫۰","۰٫۳۰"],c:1,e:"سه دهم را ۰٫۳ می‌نویسیم."},
+{q:"ممیز چه کاری انجام می‌دهد؟",a:["عدد را حذف می‌کند","عددها را جمع می‌کند","قسمت صحیح و اعشاری را جدا می‌کند","عدد را بزرگ می‌کند"],c:2,e:"ممیز قسمت صحیح را از قسمت اعشاری جدا می‌کند."},
+{q:"عدد ۱٫۵ یعنی چه؟",a:["۱ صحیح و ۵ دهم","۱۵ صحیح","۵ صدم","۱ صدم"],c:0,e:"۱٫۵ یعنی یک واحد کامل و پنج دهم."},
+{q:"کدام عدد اعشاری است؟",a:["۱۲","۸","۳٫۲","۲۰"],c:2,e:"عدد ۳٫۲ دارای ممیز است."}
+],
+[
+{q:"در عدد ۰٫۳۵، رقم ۵ کجا قرار دارد؟",a:["دهم","صدم","یکان","دهگان"],c:1,e:"۵ دومین رقم بعد از ممیز است؛ یعنی صدم."},
+{q:"۰٫۲۵ چند صدم است؟",a:["۲ صدم","۲۵ صدم","۵ صدم","۲۵ دهم"],c:1,e:"۰٫۲۵ برابر بیست و پنج صدم است."},
+{q:"در عدد ۴٫۶۳ رقم ۶ چه ارزشی دارد؟",a:["صدم","دهم","یکان","دهگان"],c:1,e:"۶ اولین رقم بعد از ممیز است."},
+{q:"کدام عدد برابر ۰٫۷۰ است؟",a:["۰٫۰۷","۰٫۷","۰٫۷۷","۰٫۷۱"],c:1,e:"صفر انتهای قسمت اعشاری مقدار عدد را تغییر نمی‌دهد."},
+{q:"در عدد ۱۲٫۳۴ رقم ۳ کدام است؟",a:["دهم","صدم","یکان","دهگان"],c:0,e:"۳ اولین رقم بعد از ممیز است."},
+{q:"کدام عدد ۸ صدم را نشان می‌دهد؟",a:["۰٫۸","۰٫۰۸","۸٫۰","۰٫۸۰"],c:1,e:"هشت صدم یعنی ۸ از ۱۰۰ قسمت."}
+],
+[
+{q:"کدام عدد بزرگ‌تر است؟",a:["۰٫۸","۰٫۳","۰٫۲","۰٫۱"],c:0,e:"۸ دهم از همه بزرگ‌تر است."},
+{q:"علامت مناسب چیست؟ ۰٫۴ ... ۰٫۷",a:[">","<","=","+"],c:1,e:"چهار دهم از هفت دهم کوچک‌تر است."},
+{q:"کدام عدد کوچک‌تر است؟",a:["۰٫۶۲","۰٫۷۱","۰٫۵۹","۰٫۸۰"],c:2,e:"۰٫۵۹ کوچک‌تر از بقیه است."},
+{q:"۰٫۵ با کدام عدد برابر است؟",a:["۰٫۰۵","۰٫۵۰","۰٫۵۵","۰٫۰۱"],c:1,e:"صفر انتهایی ارزش عدد را تغییر نمی‌دهد."},
+{q:"علامت درست چیست؟ ۱٫۲ ... ۰٫۹",a:["<",">","=","−"],c:1,e:"قسمت صحیح ۱ از صفر بزرگ‌تر است."},
+{q:"کدام عدد بزرگ‌تر است؟",a:["۲٫۴۵","۲٫۵۰","۲٫۳۹","۲٫۱۰"],c:1,e:"۲٫۵۰ از بقیه بزرگ‌تر است."}
+],
+[
+{q:"حاصل ۰٫۲ + ۰٫۴ چیست؟",a:["۰٫۵","۰٫۶","۰٫۷","۰٫۲۴"],c:1,e:"۲ دهم + ۴ دهم = ۶ دهم."},
+{q:"حاصل ۰٫۲۵ + ۰٫۳۲ چیست؟",a:["۰٫۵۷","۰٫۴۷","۰٫۶۷","۰٫۵۲"],c:0,e:"۲۵ صدم + ۳۲ صدم = ۵۷ صدم."},
+{q:"حاصل ۱٫۲ + ۰٫۳ چیست؟",a:["۱٫۳","۱٫۵","۱٫۶","۰٫۵"],c:1,e:"۱۲ دهم + ۳ دهم = ۱۵ دهم یا ۱٫۵."},
+{q:"حاصل ۰٫۷ + ۰٫۶ چیست؟",a:["۰٫۱۳","۱٫۳","۱٫۲","۰٫۱"],c:1,e:"۷ دهم + ۶ دهم = ۱۳ دهم یا ۱٫۳."},
+{q:"حاصل ۲٫۳۵ + ۱٫۲۰ چیست؟",a:["۳٫۵۵","۳٫۴۵","۲٫۵۵","۳٫۶۵"],c:0,e:"۲٫۳۵ + ۱٫۲۰ = ۳٫۵۵."},
+{q:"حاصل ۰٫۴۵ + ۰٫۱۵ چیست؟",a:["۰٫۵۰","۰٫۶۰","۰٫۷۰","۰٫۴۰"],c:1,e:"۴۵ صدم + ۱۵ صدم = ۶۰ صدم."}
+],
+[
+{q:"حاصل ۰٫۸ − ۰٫۳ چیست؟",a:["۰٫۳","۰٫۴","۰٫۵","۰٫۶"],c:2,e:"۸ دهم − ۳ دهم = ۵ دهم."},
+{q:"حاصل ۰٫۷۵ − ۰٫۲۵ چیست؟",a:["۰٫۲۵","۰٫۵۰","۰٫۶۰","۰٫۷۰"],c:1,e:"۷۵ صدم − ۲۵ صدم = ۵۰ صدم."},
+{q:"حاصل ۱٫۵ − ۰٫۴ چیست؟",a:["۱٫۱","۱٫۲","۰٫۹","۱٫۹"],c:0,e:"۱۵ دهم − ۴ دهم = ۱۱ دهم."},
+{q:"حاصل ۲٫۸ − ۱٫۳ چیست؟",a:["۱٫۵","۱٫۴","۱٫۶","۰٫۵"],c:0,e:"۲۸ دهم − ۱۳ دهم = ۱۵ دهم."},
+{q:"حاصل ۰٫۷۰ − ۰٫۲۵ چیست؟",a:["۰٫۳۵","۰٫۴۵","۰٫۵۵","۰٫۶۵"],c:1,e:"۷۰ صدم − ۲۵ صدم = ۴۵ صدم."},
+{q:"حاصل ۳٫۵ − ۱٫۲۵ چیست؟",a:["۲٫۱۵","۲٫۲۵","۲٫۳۵","۱٫۲۵"],c:1,e:"۳٫۵۰ − ۱٫۲۵ = ۲٫۲۵."}
+],
+[
+{q:"۰٫۴ چند دهم است؟",a:["۴ دهم","۴ صدم","۴ یکان","۴۰ دهم"],c:0,e:"۰٫۴ یعنی چهار دهم."},
+{q:"کدام عدد بزرگ‌تر است؟",a:["۰٫۳۹","۰٫۴","۰٫۲۹","۰٫۱"],c:1,e:"۰٫۴۰ از ۰٫۳۹ بزرگ‌تر است."},
+{q:"حاصل ۰٫۶ − ۰٫۲ + ۰٫۱ چیست؟",a:["۰٫۳","۰٫۴","۰٫۵","۰٫۹"],c:2,e:"۰٫۶ − ۰٫۲ = ۰٫۴ و ۰٫۴ + ۰٫۱ = ۰٫۵."},
+{q:"حاصل ۱٫۲۵ + ۰٫۷۵ چیست؟",a:["۱٫۵۰","۲","۲٫۵","۱٫۷۵"],c:1,e:"۱٫۲۵ + ۰٫۷۵ = ۲٫۰۰."},
+{q:"حاصل ۴٫۵ − ۲٫۲۵ چیست؟",a:["۲٫۲۵","۲٫۱۵","۲٫۵۰","۱٫۲۵"],c:0,e:"۴٫۵۰ − ۲٫۲۵ = ۲٫۲۵."},
+{q:"کدام عبارت درست است؟",a:["۰٫۷ < ۰٫۶","۰٫۵ = ۰٫۵۰","۰٫۹ < ۰٫۲","۰٫۳ > ۰٫۸"],c:1,e:"۰٫۵ و ۰٫۵۰ برابر هستند."}
+]
+];
+
+function fa(n){return Number(n).toLocaleString("fa-IR");}
+function show(id){
+ document.querySelectorAll(".container > section").forEach(s=>s.classList.add("hidden"));
+ document.getElementById(id).classList.remove("hidden");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+function clearTimers(){clearTimeout(autoTimer);clearInterval(timerInterval);autoTimer=null;timerInterval=null;}
+function update(){
+ document.getElementById("score").textContent=fa(score);
+ document.getElementById("completed").textContent=fa(completed.length);
+ document.getElementById("medals").textContent=fa(medals.length);
+ document.getElementById("bar").style.width=(completed.length/lessons.length*100)+"%";
+}
+function makeLessons(){
+ const list=document.getElementById("lessonList");list.innerHTML="";
+ lessons.forEach((l,i)=>{
+  const b=document.createElement("button");
+  b.className="lesson "+(completed.includes(i)?"done":"");
+  b.innerHTML=`<span class="emoji">${l.icon}</span><strong>${fa(i+1)}. ${l.title}</strong><small>${l.desc}<br>${completed.includes(i)?'<span class="done-tag">✓ تکمیل شده</span>':'🎯 ۶ تمرین آموزشی'}</small>`;
+  b.onclick=()=>openLesson(i);list.appendChild(b);
+ });
+}
+function goHome(){
+ clearTimers();activePage="home";saveGame();makeLessons();update();show("home");
+}
+function openLesson(i){
+ clearTimers();current=i;activePage="lesson";saveGame();
+ document.getElementById("lessonNumber").textContent="درس "+fa(i+1)+" از "+fa(lessons.length);
+ document.getElementById("lessonTitle").textContent=lessons[i].icon+" "+lessons[i].title;
+ document.getElementById("mascotMessage").textContent=lessons[i].message;
+ document.getElementById("lessonContent").innerHTML=lessons[i].content;
+ if(i===0){
+  const visual=document.getElementById("tenths");visual.innerHTML="";
+  for(let j=0;j<10;j++){
+   const cell=document.createElement("div");
+   cell.style.cssText=`width:38px;height:38px;border-radius:8px;border:2px solid #8c7ee9;background:${j<3?"#7966dc":"#f2efff"};`;
+   visual.appendChild(cell);
+  }
+ }
+ show("lessonPage");
+}
+function startQuiz(){
+ clearTimers();qIndex=0;lessonScore=0;activePage="quiz";saveGame();show("quizPage");showQuestion();
+}
+function showQuestion(){
+ clearTimers();locked=false;
+ const q=quizzes[current][qIndex];
+ document.getElementById("quizNumber").textContent="تمرین "+fa(qIndex+1)+" از "+fa(6);
+ document.getElementById("quizScore").textContent=fa(lessonScore*10);
+ document.getElementById("quizProgress").style.width=(qIndex/6*100)+"%";
+ document.getElementById("question").textContent=q.q;
+ const options=document.getElementById("options");options.innerHTML="";
+ q.a.forEach((answer,i)=>{
+  const b=document.createElement("button");b.className="option";b.textContent=answer;
+  b.onclick=()=>answerQuestion(i,b);options.appendChild(b);
+ });
+ document.getElementById("feedback").style.display="none";
+ document.getElementById("countdown").classList.add("hidden");
+ document.getElementById("timerTrack").classList.add("hidden");
+ saveGame();
+}
+function answerQuestion(i,button){
+ if(locked)return;locked=true;
+ const q=quizzes[current][qIndex];
+ const buttons=document.querySelectorAll(".option");
+ buttons.forEach((b,index)=>{b.disabled=true;if(index===q.c)b.classList.add("correct");});
+ const feedback=document.getElementById("feedback");
+ if(i===q.c){
+  score+=10;lessonScore++;
+  feedback.innerHTML="🎉 آفرین! جواب درست است!<br>"+q.e+"<br>⭐ ۱۰ امتیاز گرفتی!";
+  feedback.style.background="#b8f0d1";
+ }else{
+  button.classList.add("wrong");
+  feedback.innerHTML="😊 اشکالی ندارد! جواب درست مشخص شده است.<br>پاسخ صحیح: <b>"+q.a[q.c]+"</b><br>"+q.e;
+  feedback.style.background="#ffe0c5";
+ }
+ feedback.style.display="block";
+ document.getElementById("quizScore").textContent=fa(lessonScore*10);
+ document.getElementById("quizProgress").style.width=((qIndex+1)/6*100)+"%";
+ document.getElementById("countdown").classList.remove("hidden");
+ document.getElementById("timerTrack").classList.remove("hidden");
+ saveGame();
+ let remaining=2;
+ document.getElementById("countdown").textContent="🤖 اعشارک: سؤال بعدی تا ۲ ثانیه دیگر...";
+ document.getElementById("timerFill").style.width="100%";
+ timerInterval=setInterval(()=>{
+  remaining-=0.1;
+  document.getElementById("timerFill").style.width=Math.max(0,remaining/2*100)+"%";
+ },100);
+ autoTimer=setTimeout(()=>{clearTimers();nextQuestion();},2000);
+}
+function nextQuestion(){
+ clearTimers();qIndex++;
+ if(qIndex<6)showQuestion();else finishLesson();
+}
+function finishLesson(){
+ clearTimers();
+ if(!completed.includes(current))completed.push(current);
+ if(lessonScore>=5&&!medals.includes(current))medals.push(current);
+ activePage="result";saveGame();
+ document.getElementById("stars").textContent=lessonScore===6?"⭐⭐⭐":lessonScore>=4?"⭐⭐":"⭐";
+ document.getElementById("resultTitle").textContent=lessonScore===6?"فوق‌العاده بود! تو قهرمانی! 🥇":lessonScore>=4?"آفرین! خیلی خوب پیش رفتی! 🌟":"تلاش خوبی بود! دوباره تمرین کن! 💪";
+ document.getElementById("resultText").textContent="از ۶ سؤال، "+fa(lessonScore)+" پاسخ درست داشتی.";
+ document.getElementById("lessonPoints").innerHTML=
+ `<span>${fa(lessonScore*10)}</span><span>از</span><span>۶۰</span>`;
+ makeLessons();update();show("resultPage");
+}
+function resetGame(){
+ if(!confirm("آیا مطمئنی می‌خواهی همه امتیازها و پیشرفت‌ها پاک شوند؟"))return;
+ clearTimers();localStorage.removeItem(STORAGE_KEY);
+ score=0;current=0;qIndex=0;lessonScore=0;completed=[];medals=[];activePage="home";
+ saveGame();goHome();
+}
+function resumeGame(){
+ makeLessons();update();
+ if(activePage==="lesson")openLesson(current);
+ else if(activePage==="quiz"){show("quizPage");showQuestion();if(qIndex>0)document.getElementById("quizProgress").style.width=(qIndex/6*100)+"%";}
+ else if(activePage==="result"){
+  if(lessonScore>=5&&!medals.includes(current))medals.push(current);
+  finishLesson();
+ }else goHome();
+}
+loadGame();resumeGame();
+</script>
+</body>
+</html>
